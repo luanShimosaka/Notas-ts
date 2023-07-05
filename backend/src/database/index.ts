@@ -1,8 +1,6 @@
-import mysql from 'mysql';
+import mongoose from 'mongoose';
 
-export const database = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'NotasTs',
-    database: 'notas_ts'
-});
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost', { dbName: 'blog' });
+
+export default mongoose;
